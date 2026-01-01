@@ -1,52 +1,66 @@
 "use client";
 
 import { useState } from "react";
+import Tesseract from "tesseract.js";
 import { Upload } from "lucide-react";
 
 export default function UploadFile() {
   const [file, setFile] = useState(null);
+  const [text, setText] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleFileChange = (e) => setFile(e.target.files[0]);
+  function handleFileChange(e) {
+    setFile(e.target.files[0]);
+    setText("");
+  }
 
-  const handleUpload = (e) => {
+  async function handleUpload(e) {
     e.preventDefault();
-    if (!file) return alert("Please select a file first.");
-    alert(`File "${file.name}" uploaded successfully!`);
-  };
+
+    if (!file) {
+      alert("Please select a file first");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const result = await Tesseract.recognize(file, "eng");
+      setText(result.data.text);
+    } catch (error) {
+      console.error(error);
+      alert("OCR failed");
+    }
+
+    setLoading(false);
+  }
 
   return (
     <div className="upload-page">
-      <div className="upload-container">
-        <div className="flex flex-col items-center mb-6">
-          <Upload className="upload-icon" />
-          <h2 className="upload-title">Upload Your Document</h2>
-          <p className="upload-subtitle">
-            Choose a file to convert — secure, fast, and simple.
-          </p>
-        </div>
+      <div className="upload-box">
+        <Upload className="upload-icon" />
 
-        <form onSubmit={handleUpload} className="upload-form">
-          <label htmlFor="file-upload" className="upload-label">
-            {file ? (
-              <span className="upload-file-name">📄 {file.name}</span>
-            ) : (
-              <span>
-                Drag & drop your file here or{" "}
-                <span className="upload-browse">browse</span>
-              </span>
-            )}
-            <input
-              id="file-upload"
-              type="file"
-              className="hidden"
-              onChange={handleFileChange}
-            />
-          </label>
+        <h2>Upload Your Document</h2>
+        <p>Select an image or scanned document to extract text.</p>
 
-          <button type="submit" className="upload-btn">
-            Upload File
+        <form onSubmit={handleUpload}>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleFileChange}
+          />
+
+          <button type="submit" disabled={loading}>
+            {loading ? "Extracting..." : "Upload & Extract"}
           </button>
         </form>
+
+        {text && (
+          <div className="result-box">
+            <h3>Extracted Text</h3>
+            <pre>{text}</pre>
+          </div>
+        )}
       </div>
     </div>
   );
