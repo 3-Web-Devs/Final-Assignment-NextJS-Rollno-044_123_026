@@ -1,7 +1,7 @@
 #  Document-Type-Changer
 
 **Document-Type-Changer** is a modern web application that allows users to easily **convert, extract, and manipulate different document types**.  
-It provides a set of convenient tools for **PDF, Word, Image, HTML**, and **scanned documents** .
+It provides a set of convenient tools for **PDF, Word, Image, HTML**, and **scanned documents** using **OCR(tesseract.js)** that extracts text.
 
 ---
 
@@ -20,6 +20,7 @@ It provides a set of convenient tools for **PDF, Word, Image, HTML**, and **scan
  Responsive design for desktop and mobile devices  
  Responsive Home, About, Services, Dashboard, Contact,
  Upload file, Register, Login Pages
+ Uses OCR(tesseract.js) to extract text in UploadFile page as per requirenment
 ---
 
 ##  Installation & Setup
