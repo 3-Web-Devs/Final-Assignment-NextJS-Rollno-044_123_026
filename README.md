@@ -1,7 +1,7 @@
 #  Document-Type-Changer
 
 **Document-Type-Changer** is a modern web application that allows users to easily **convert, extract, and manipulate different document types**.  
-It provides a set of convenient tools for **PDF, Word, Image, HTML**, and **scanned documents** using **OCR** and **AI integration**.
+It provides a set of convenient tools for **PDF, Word, Image, HTML**, and **scanned documents** .
 
 ---
 
@@ -13,3 +13,29 @@ It provides a set of convenient tools for **PDF, Word, Image, HTML**, and **scan
 -  **OCR PDF to Text** – Extract text from scanned PDFs using Optical Character Recognition (OCR).  
 
 ---
+##  Features Overview
+
+ User-friendly interface for all conversions  
+ Fast and reliable document processing  
+ Responsive design for desktop and mobile devices  
+ Responsive Home, About, Services, Dashboard, Contact,
+ Upload file, Register, Login Pages
+---
+
+##  Installation & Setup
+
+Follow these steps to run the project locally:
+
+```bash
+#  Clone this repository
+git clone https://github.com/<your-username>/<your-repo-name>.git
+
+#  Move into the project folder
+cd <your-repo-name>
+
+#  Install dependencies
+npm install
+
+#  Run the development server
+npm run dev
+
