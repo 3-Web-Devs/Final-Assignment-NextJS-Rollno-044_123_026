@@ -1,18 +1,15 @@
-# Next Js project
-A Document Type Converter thatProvides us with several document type converting services.
+#  Document-Type-Changer
 
+**Document-Type-Changer** is a modern web application that allows users to easily **convert, extract, and manipulate different document types**.  
+It provides a set of convenient tools for **PDF, Word, Image, HTML**, and **scanned documents** using **OCR** and **AI integration**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Features / Services
 
-## React Compiler
+-  **PDF to Word Converter** – Convert your PDFs into editable Word documents.  
+-  **Image to PDF Converter** – Convert images into professional PDF format.  
+-  **HTML to PDF Converter** – Convert web pages or HTML files into PDFs.  
+-  **OCR PDF to Text** – Extract text from scanned PDFs using Optical Character Recognition (OCR).  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
-
+---
