@@ -60,6 +60,23 @@ ul{
 .login-btn:hover {
     background-color: #eed06f;
 }
+@media (max-width: 768px) {
+  .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .navbar-links li a {
+    font-size: 1rem;
+  }
+
+  .login-btn,
+  .register-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+}
 
 
 /* Footer styling */
@@ -211,6 +228,21 @@ ul{
   background-color: #6F4E37;
   color: white;
 }
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 4rem 1.25rem;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
 /* Home About Intro Section */
 .about-intro {
   width: 100%;
@@ -342,14 +374,20 @@ ul{
   font-size: 1rem;
 }
 
-/* Responsive: stack image & text on small screens */
 @media (max-width: 768px) {
-  .about-mission {
-    flex-direction: column;
-    text-align: center;
+  .about-intro {
+    padding: 4rem 1.5rem;
   }
 
+  .about-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .about-mission {
+    gap: 1.5rem;
+  }
 }
+
 /* SERVICES SECTION */
 .services-section {
   width: 100%;
@@ -479,12 +517,14 @@ ul{
   text-align: center;
   line-height: 1.5;
 }
+@media (max-width: 768px) {
+  .services-section {
+    padding: 4rem 1.5rem;
+  }
 
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .services-grid {
-    grid-template-columns: 1fr;
+  .service-box,
+  .service-card {
+    padding: 2rem 1.5rem;
   }
 }
 
@@ -810,6 +850,18 @@ body {
   margin-bottom: 1rem;
   font-weight: 600;
 }
+@media (max-width: 768px) {
+  .document-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .document-actions {
+    align-self: flex-end;
+  }
+}
+
 
 /* UPLOAD FILE COMPONENT */
 .upload-container {
@@ -945,6 +997,18 @@ body {
 .register-login-link:hover {
   text-decoration: underline;
 }
+@media (max-width: 480px) {
+  .login-card,
+  .register-form,
+  .upload-box {
+    padding: 2rem 1.5rem;
+  }
+
+  button {
+    font-size: 0.95rem;
+  }
+}
+
 /* ======================
    UPLOAD FILE PAGE
 ====================== */
