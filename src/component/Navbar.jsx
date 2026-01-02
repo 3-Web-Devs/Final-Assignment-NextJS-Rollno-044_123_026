@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { FileText } from "lucide-react";
 
+
 export default function Navbar() {
   return (
-    <nav className="bg-[#6F4E37] w-full shadow-md">
-      <div className="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
+    <nav className="bg-[#6F4E37] w-full shadow-md relative">
+      <div className="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between relative">
 
         {/* Logo */}
         <div className="flex items-center gap-3 text-white">
@@ -16,63 +17,46 @@ export default function Navbar() {
           </span>
         </div>
 
+        {/* Hamburger checkbox */}
+        <input type="checkbox" id="nav-toggle" className="nav-toggle" />
+        <label htmlFor="nav-toggle" className="nav-toggle-label">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
         {/* Links */}
         <ul className="navbar-links">
           <li>
-            <Link href="/" >
-              Home
-            </Link>
-          </li>
-
-          <li>
-            <Link href="/about" >
-              About
-            </Link>
-          </li>
-
-          <li>
-            <Link href="/services">
-              Services
-            </Link>
-          </li>
-
-          <li>
-            <Link href="/contact" >
-              Contact Us
-            </Link>
-          </li>
-
-
-          <li>
-            <Link href="/dashboard">
-              Dashboard
-            </Link>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <Link
-              href="/uploadfile"
-              className="uploadfile-btn"  >
+            <Link href="/about">About</Link>
+          </li>
+          <li>
+            <Link href="/services">Services</Link>
+          </li>
+          <li>
+            <Link href="/contact">Contact Us</Link>
+          </li>
+          <li>
+            <Link href="/dashboard">Dashboard</Link>
+          </li>
+          <li>
+            <Link href="/uploadfile" className="uploadfile-btn">
               Upload File
             </Link>
           </li>
-
-          {/* Register Button */}
           <li>
-            <Link
-              href="/register"
-              className="register-btn"  >
+            <Link href="/register" className="register-btn">
               Register
             </Link>
           </li>
-          {/* Login Button */}
           <li>
-            <Link
-              href="/login"
-              className="login-btn"  >
+            <Link href="/login" className="login-btn">
               Login
             </Link>
           </li>
-           
         </ul>
 
       </div>

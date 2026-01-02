@@ -60,21 +60,61 @@ ul{
 .login-btn:hover {
     background-color: #eed06f;
 }
+/* Hamburger label hidden on desktop */
+.nav-toggle-label {
+  display: none;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 30px;
+  height: 22px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.nav-toggle-label span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hide checkbox */
+.nav-toggle {
+  display: none;
+}
+
+/* Navbar links on mobile */
 @media (max-width: 768px) {
   .navbar-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
+    position: absolute;
+    top: 72px; /* height of navbar */
+    left: 0;
+    width: 100%;
+    background-color: #6F4E37;
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 999;
   }
 
-  .navbar-links li a {
-    font-size: 1rem;
+  .navbar-links li {
+    text-align: center;
+    padding: 0.75rem 0;
   }
 
-  .login-btn,
-  .register-btn {
-    padding: 0.4rem 1rem;
-    font-size: 0.9rem;
+  .nav-toggle:checked + .nav-toggle-label + .navbar-links {
+    max-height: 600px; /* enough to show all links */
+  }
+
+  .nav-toggle-label {
+    display: flex;
   }
 }
 
